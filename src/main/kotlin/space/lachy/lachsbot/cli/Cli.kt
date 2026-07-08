@@ -1,6 +1,5 @@
 package space.lachy.lachsbot.cli
 
-import okhttp3.internal.toImmutableList
 import space.lachy.lachsbot.LachsBot.logger
 import space.lachy.lachsbot.cli.command.CliCommand
 import space.lachy.lachsbot.cli.command.ExitCliCommand
@@ -39,7 +38,7 @@ object Cli {
                 continue
             }
 
-            val cmdArgs: List<String> = cmdSplit.subList(1, cmdSplit.size).toImmutableList()
+            val cmdArgs: List<String> = cmdSplit.subList(1, cmdSplit.size).toList()
 
             val cmd: CliCommand? = commands.firstOrNull { it.aliases.contains(cmdId) }
 

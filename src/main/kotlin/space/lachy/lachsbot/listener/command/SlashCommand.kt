@@ -11,13 +11,11 @@ abstract class SlashCommand(
     private val description: String,
     private val permissions: DefaultMemberPermissions,
     private val options: Collection<OptionData> = emptyList(),
-    private val guildOnly: Boolean = true,
 ) {
 
     fun build(): SlashCommandData {
         return Commands.slash(name, description)
             .setDefaultPermissions(permissions)
-            .setGuildOnly(guildOnly)
             .addOptions(options)
     }
 
